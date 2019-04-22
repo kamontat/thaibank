@@ -1,0 +1,10 @@
+{
+  "name": "thaibank",
+  "version": "0.0.1-alpha.0",
+  "description": "accounting, website, and mobile application information of thai bank",
+  "main": "index.js",
+  "repository": "https://github.com/kamontat/thaibank",
+  "author": "Kamontat Chantrachirathumrong",
+  "license": "MIT",
+  "private": false
+}
