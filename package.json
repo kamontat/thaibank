@@ -24,5 +24,8 @@
   "scripts": {
     "dev": "vuepress dev website",
     "build": "vuepress build website"
+  },
+  "dependencies": {
+    "moment": "2.24.0"
   }
 }
