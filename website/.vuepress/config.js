@@ -1,7 +1,7 @@
 const package = require('../../package.json')
 
 module.exports = {
-  base: "/thaibank/",
+  // base: "/thaibank/",
   head: [
     ['link', {
       rel: 'icon',
