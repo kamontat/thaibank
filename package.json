@@ -23,7 +23,8 @@
   },
   "scripts": {
     "dev": "vuepress dev website",
-    "build": "vuepress build website"
+    "build": "vuepress build website",
+    "test": "echo nothing"
   },
   "dependencies": {
     "moment": "2.24.0"
