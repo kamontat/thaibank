@@ -31,22 +31,18 @@
 # abort on errors
 set -e
 
-USERNAME="kamontat"
-REPO="thaibank"
-DEST_FOLDER="public"
+RELEASE_NAME="$1"
+if test -z "$RELEASE_NAME"; then
+  echo "release name is required; e.g. patch, minor, major"
+fi
 
-# build
-yarn build
-
-# navigate into the build output directory
-cd "$DEST_FOLDER" || exit 1
+VERSION="$(npm version "$RELEASE_NAME" --no-git-tag-version)"
 
 # if you are deploying to a custom domain
 echo 'bank.kamontat.net' >CNAME
 
 git add -A
 git commit -m 'chore(release): update new version'
+git tag "$VERSION"
 
-git push "git@github.com:$USERNAME/$REPO.git" master:gh-pages
-
-cd - || exit 2
+git push master && git push master --tags

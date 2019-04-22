@@ -3,10 +3,19 @@ const package = require('../../package.json')
 module.exports = {
   base: "/thaibank/",
   head: [
+    ['link', {
+      rel: 'icon',
+      href: '/features/images/logo.jpg'
+    }],
     ['meta', {
       hid: 'author',
       key: 'author',
       content: package.author
+    }],
+    ['meta', {
+      hid: 'version',
+      key: 'version',
+      content: package.version
     }]
   ],
   locales: {
