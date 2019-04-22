@@ -45,4 +45,4 @@ git add -A
 git commit -m 'chore(release): update new version'
 git tag "$VERSION"
 
-git push master && git push master --tags
+git push origin master && git push origin master --tags
