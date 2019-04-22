@@ -2,9 +2,27 @@
   "name": "thaibank",
   "version": "0.0.1-alpha.0",
   "description": "accounting, website, and mobile application information of thai bank",
+  "descriptionTH": "การจัดการบัญชี, เว็บไซต์ และ แอพพลิเคชั่น ของธนาคารในประเทศไทย",
   "main": "index.js",
   "repository": "https://github.com/kamontat/thaibank",
   "author": "Kamontat Chantrachirathumrong",
+  "contributors": [],
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@vssue/api-github-v3": "0.8.2",
+    "@vssue/vuepress-plugin-vssue": "0.8.2",
+    "@vuepress/plugin-active-header-links": "1.0.0-alpha.47",
+    "@vuepress/plugin-back-to-top": "1.0.0-alpha.47",
+    "@vuepress/plugin-google-analytics": "1.0.0-alpha.47",
+    "@vuepress/plugin-medium-zoom": "1.0.0-alpha.47",
+    "@vuepress/plugin-pwa": "1.0.0-alpha.47",
+    "vuepress": "1.0.0-alpha.47",
+    "vuepress-plugin-flowchart": "1.4.3",
+    "vuepress-plugin-seo": "0.1.2"
+  },
+  "scripts": {
+    "dev": "vuepress dev website",
+    "build": "vuepress build website"
+  }
 }
