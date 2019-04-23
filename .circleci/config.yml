@@ -54,8 +54,11 @@ jobs:
           name: Move circle config to dest folder
           command: cp -r .circleci public
       - run:
+          name: Move CNAME config to github page
+          command: cp -r CNAME public/CNAME
+      - run:
           name: Deploy docs to gh-pages branch
-          command: yarn gh-pages --dist public --dotfiles
+          command: 'yarn gh-pages --dist public --dotfiles --message "chore(release): push new release to github"'
 
 workflows:
   version: 2
