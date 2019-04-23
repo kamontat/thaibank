@@ -194,9 +194,6 @@ st->e
 
 ### ธนาคารกรุงไทย
 
-<!-- 
-  @todo #IMG-0003:5min Add book image to website/.vuepress/public/features/images/compare/books/ktb.jpeg
--->
 ![ktb-book](/features/images/compare/books/ktb.jpeg)
 
 ### ธนาคารกรุงเทพ 
