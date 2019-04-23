@@ -1,6 +1,6 @@
 {
   "name": "thaibank",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "accounting, website, and mobile application information of thai bank",
   "descriptionTH": "การจัดการบัญชี, เว็บไซต์ และ แอพพลิเคชั่น ของธนาคารในประเทศไทย",
   "main": "index.js",
