@@ -36,13 +36,17 @@ if test -z "$RELEASE_NAME"; then
   echo "release name is required; e.g. patch, minor, major"
 fi
 
+# Update package.json
 VERSION="$(npm version "$RELEASE_NAME" --no-git-tag-version)"
 
-# if you are deploying to a custom domain
-echo 'bank.kamontat.net' >CNAME
+# Create CHANGELOG
+gitgo cl --tag "$VERSION"
 
+# Commit release change
 git add -A
 git commit -m 'chore(release): update new version'
+# Tag new release
 git tag "$VERSION"
 
+# Update to github
 git push origin master && git push origin master --tags
