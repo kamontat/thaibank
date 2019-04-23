@@ -8,11 +8,6 @@ module.exports = {
       href: '/features/images/logo.jpg'
     }],
     ['meta', {
-      hid: 'author',
-      key: 'author',
-      content: package.author
-    }],
-    ['meta', {
       hid: 'version',
       key: 'version',
       content: package.version
@@ -68,14 +63,47 @@ module.exports = {
       siteTitle: (_, $site) => $site.title,
       title: $page => $page.title,
       description: $page => $page.frontmatter.description,
-      author: (_, $site) => $site.themeConfig.author,
-      tags: $page => $page.frontmatter.tags,
+      author: (_, $site) => package.author,
+      tags: $page => {
+        const defaultTags = [
+          "ธนาคาร",
+          "ประเทศไทย", "ไทย",
+          "ข้อมูล", "เปรียบเทียบ",
+          "KBank", "Kasikorn", "Kasikorn Bank", "กสิกร", "กสิกรไทย", "ธนาคารกสิกรไทย",
+          "SCB", "ไทยพาณิชย์", "ธนาคารไทยพาณิชย์",
+          "Krungsri", "KS", "กรุงศรี", "กรุงศรีอยุธยา", "ธนาคารกรุงศรีอยุธยา",
+          "KTB", "KTC", "Krungthai", "กรุงไทย", "ธนาคารกรุงไทย",
+          "Bangkok", "Bangkok Bank", "กรุงเทพ", "ธนาคารกรุงเทพ",
+          "TMB", "ทหารไทย", "ธนาคารทหารไทย",
+          "Thanachart", "ธนชาต", "ธนาคารธนชาต",
+          "GSB", "ออม", "ออมสิน", "ธนาคารออมสิน",
+        ]
+        defaultTags.push($page.frontmatter.tags)
+        return defaultTags
+      },
       twitterCard: _ => 'summary_large_image',
-      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      type: $page => {
+        const types = {
+          article: {
+            list: ['/bank', '/compare']
+          }
+        }
+
+        for (type in types) {
+          const queries = types[type].list
+          if (queries.some(v => new RegExp(v).test($page.regularPath))) {
+            console.log($page.path);
+            console.log(`${$page.regularPath} | ${type}`);
+            return type
+          }
+        }
+
+        return 'website'
+      },
       url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
       image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image),
       publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
-      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+      modifiedAt: $page => $page.lastUpdated,
     }
   },
   themeConfig: {
