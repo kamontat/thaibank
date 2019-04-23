@@ -1,0 +1,7 @@
+version: 3
+commits:
+  - type: custom
+    value: this is a custom commit header
+branches:
+  - type: custom
+    value: this is a custom branch header
