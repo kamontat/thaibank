@@ -51,8 +51,11 @@ jobs:
             git config user.email "ci@kamontat.net"
             git config user.name "cibot"
       - run:
+          name: Move circle config to dest folder
+          command: cp -r .circleci public
+      - run:
           name: Deploy docs to gh-pages branch
-          command: yarn gh-pages --dist public
+          command: yarn gh-pages --dist public --dotfiles
 
 workflows:
   version: 2
