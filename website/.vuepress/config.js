@@ -92,8 +92,6 @@ module.exports = {
         for (type in types) {
           const queries = types[type].list
           if (queries.some(v => new RegExp(v).test($page.regularPath))) {
-            console.log($page.path);
-            console.log(`${$page.regularPath} | ${type}`);
             return type
           }
         }
@@ -184,6 +182,7 @@ module.exports = {
         }],
       },
       '/en/': {
+        sidebar: 'auto',
         lang: 'en-US', // this will be set as the lang attribute on <html>
         // text for the language dropdown
         selectText: 'Languages',
@@ -203,55 +202,55 @@ module.exports = {
           }
         },
         nav: [{
-          text: 'comparison',
+          text: 'Comparison',
           items: [{
             text: 'Account',
-            link: '/compare/account'
+            link: '/en/compare/account'
           }, {
             text: 'Credit card',
-            link: '/compare/credit'
+            link: '/en/compare/credit'
           }, {
             text: 'Application',
-            link: '/compare/application'
+            link: '/en/compare/application'
           }, {
             text: 'Website',
-            link: '/compare/website'
+            link: '/en/compare/website'
           }]
         }, {
           text: 'Bank',
           items: [{
             text: 'Kasikorn Bank',
-            link: '/bank/k'
+            link: '/en/bank/k'
           }, {
             text: 'Siam Commercial Bank',
-            link: '/bank/scb'
+            link: '/en/bank/scb'
           }, {
             text: 'Bank of Ayudhya',
-            link: '/bank/ks'
+            link: '/en/bank/ks'
           }, {
             text: 'Krungthai Bank',
-            link: '/bank/ktb'
+            link: '/en/bank/ktb'
           }, {
             text: 'Bangkok Bank',
-            link: '/bank/bb'
+            link: '/en/bank/bb'
           }, {
             text: 'TMB Bank',
-            link: '/bank/tmb'
+            link: '/en/bank/tmb'
           }, {
             text: 'Thanachart Bank',
-            link: '/bank/t'
+            link: '/en/bank/t'
           }, {
             text: 'Government Savings Bank',
-            link: '/bank/gsb'
+            link: '/en/bank/gsb'
           }]
         }, {
           text: 'Information',
           items: [{
             text: 'License',
-            link: '/info/licenses'
+            link: '/en/info/licenses'
           }, {
             text: 'Contribute',
-            link: '/info/contribute'
+            link: '/en/info/contribute'
           }]
         }]
       },
