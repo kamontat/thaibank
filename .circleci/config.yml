@@ -1,0 +1,76 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+         name: Install dependencies
+         command: |
+           yarn install
+      - run:
+          name: Run the test
+          command: |
+            yarn test
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+         name: Install dependencies
+         command: |
+           yarn install
+      - run:
+          name: Build static html file
+          command: |
+            yarn build
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - public
+  deploy:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/app
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Install and configure dependencies
+          command: |
+            yarn add gh-pages@2.0.1
+      - run:
+          name: Update git configuration
+          command: |
+            git config user.email "ci@kamontat.net"
+            git config user.name "cibot"
+      - run:
+          name: Move circle config to dest folder
+          command: cp -r .circleci public
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: yarn gh-pages --dist public --dotfiles
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test:
+          requires:
+            - build
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
