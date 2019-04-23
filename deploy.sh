@@ -44,7 +44,7 @@ gitgo cl --tag "$VERSION"
 
 # Commit release change
 git add -A
-git commit -m 'chore(release): update new version'
+git commit -m "chore(release): update ${VERSION} version"
 # Tag new release
 git tag "$VERSION"
 
