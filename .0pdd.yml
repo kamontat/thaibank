@@ -1,4 +1,5 @@
 format:
+  - short-title
   - title-length=200
 tags:
   - "_: Bot"

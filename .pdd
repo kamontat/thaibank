@@ -1,0 +1,3 @@
+--verbose
+--rule min-estimate:5
+--rule max-estimate:120
