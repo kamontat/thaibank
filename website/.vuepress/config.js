@@ -5,7 +5,7 @@ module.exports = {
   head: [
     ['link', {
       rel: 'icon',
-      href: '/features/images/logo.jpg'
+      href: '/features/images/logo.jpeg'
     }],
     ['meta', {
       hid: 'version',
