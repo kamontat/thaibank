@@ -693,7 +693,15 @@
     "@vssue/utils" "^0.8.2"
     axios "^0.18.0"
 
-"@vssue/api-github-v3@0.8.2", "@vssue/api-github-v3@^0.8.2":
+"@vssue/api-github-v3@1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vssue/api-github-v3/-/api-github-v3-1.4.4.tgz#e32ed6d5910bb87c327de8576c107ee7e53bb6db"
+  integrity sha512-/ZQwO+/XgHz7hnVX6zLIWA0L1fmI4LBzQoRp1J56tonH6gbDpvl/VZ8VHIcSldHnpEsjf8wYmbIEz8rJd7jG2Q==
+  dependencies:
+    "@vssue/utils" "^1.4.0"
+    axios "^0.18.1"
+
+"@vssue/api-github-v3@^0.8.2":
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@vssue/api-github-v3/-/api-github-v3-0.8.2.tgz#7ea97780a9a40b11eab62312830ed5926fd63e67"
   integrity sha512-ZOZiUdYdluwmLu36xiQvjsomjT1JzUKk8/mCLz/MiYfNeIrbVbY3GY8Rx5/+IKAlZguJZq+Eg9EgmWjGR5BMIg==
@@ -713,6 +721,14 @@
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@vssue/utils/-/utils-0.8.2.tgz#8af9d933acc8ff1df78c3e867a3b9b2a3f765f70"
   integrity sha512-YOED14x9SvRiGdnOAtvxoZETCiE97YO2JMGjLETPHqy5tRdv+S4ulETgKXq2+lxpc+bZu6PJlzX+BaJvjxQb3w==
+  dependencies:
+    date-fns "^1.29.0"
+    qs "^6.6.0"
+
+"@vssue/utils@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@vssue/utils/-/utils-1.4.0.tgz#3cc2fd8492a3409e343289981e2209b6ca2f8313"
+  integrity sha512-3d9WCYNurdFKApFzU8i7YD1GCGhunEVYnwSJxwQ2rDmEdpLneAYNJWg9+QS6bqzB+Pw7ymtwLf/Sqti9+xUGqA==
   dependencies:
     date-fns "^1.29.0"
     qs "^6.6.0"
@@ -1426,6 +1442,14 @@ axios@^0.18.0:
   dependencies:
     follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
+
+axios@^0.18.1:
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
+  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -2615,6 +2639,13 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
+
 debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -3312,6 +3343,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.7.0"
@@ -4023,6 +4061,11 @@ is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+
+is-buffer@^2.0.2:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+  integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
 
 is-callable@^1.1.4:
   version "1.1.4"
