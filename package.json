@@ -10,16 +10,16 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@vssue/api-github-v3": "0.8.2",
-    "@vssue/vuepress-plugin-vssue": "0.8.2",
-    "@vuepress/plugin-active-header-links": "1.0.0-alpha.47",
-    "@vuepress/plugin-back-to-top": "1.0.0-alpha.47",
-    "@vuepress/plugin-google-analytics": "1.0.0-alpha.47",
-    "@vuepress/plugin-medium-zoom": "1.0.0-alpha.47",
-    "@vuepress/plugin-pwa": "1.0.0-alpha.47",
-    "vuepress": "1.0.0-alpha.47",
+    "@vssue/api-github-v3": "0.10.0",
+    "@vssue/vuepress-plugin-vssue": "0.10.0",
+    "@vuepress/plugin-active-header-links": "1.7.1",
+    "@vuepress/plugin-back-to-top": "1.7.1",
+    "@vuepress/plugin-google-analytics": "1.7.1",
+    "@vuepress/plugin-medium-zoom": "1.7.1",
+    "@vuepress/plugin-pwa": "1.7.1",
+    "vuepress": "1.7.1",
     "vuepress-plugin-flowchart": "1.4.3",
-    "vuepress-plugin-seo": "0.1.2"
+    "vuepress-plugin-seo": "0.1.4"
   },
   "scripts": {
     "dev": "vuepress dev website",
@@ -27,6 +27,6 @@
     "test": "echo nothing"
   },
   "dependencies": {
-    "moment": "2.24.0"
+    "moment": "2.29.1"
   }
 }
